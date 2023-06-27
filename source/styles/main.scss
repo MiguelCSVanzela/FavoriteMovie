@@ -1,0 +1,89 @@
+@use 'variaveis'; 
+@use 'header';
+@use 'hero';
+@use 'scenes';
+@use 'overview';
+@use 'curious';
+@use 'watch';
+@use 'footer';
+
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html, body, section{
+    block-size: 100%;
+}
+
+body{
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    background-color: variaveis.$BackgroundColor;
+    text-decoration: none;
+    list-style: none;
+}
+
+.container{
+    scroll-snap-type: y mandatory; 
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.section{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    
+}
+.section:nth-child(5){
+    height: 50vh;
+    
+}
+
+@mixin title($font: 16px){
+    font-size: $font; 
+    padding-bottom: calc($font + 8px); 
+}
+
+.title-big{
+    @include title(24px); 
+}
+.title{
+    @include title; 
+}
+.title-small{
+    @include title(8px);
+}
+
+
+.button{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: variaveis.$TextColor; 
+    border: none; 
+    border: 2px solid variaveis.$PrimaryColor; 
+    border-radius: 8px;
+    text-transform: uppercase;
+    background-color: transparent;
+    
+    &:hover{
+        color: variaveis.$BackgroundColor; 
+        background-color: variaveis.$PrimaryColor;
+        cursor: pointer;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: 768px){
+    font-size: 15px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    }
+}

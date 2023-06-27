@@ -1,0 +1,110 @@
+.header{
+    padding-top: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-height: 100px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+
+    @media screen and (max-width: 768px){
+        padding-top: 2vh;
+    }
+    
+    @media(min-width: 769px) and (max-width: 960px){
+        padding-top: 5vh;
+    }
+
+    &--is-hidden{
+        display: none; 
+    }
+
+    &__trailer{
+        img{
+            height: 80px;
+            transition: all .5s ease;
+            &:hover{
+                transform: rotateY(360deg);
+                transition: all .5s ease;
+            }
+        }
+    }
+    &__brand{
+        img{
+            height: 100px;
+            transition: all .5s ease;
+            &:hover {
+                transform: scale(2.5);
+                transition: all .5s ease;
+            }
+        }
+    }
+    &__play{
+        img{
+            height: 100px; 
+            transition: all 0.5s ease-in-out;
+            &:hover{
+                transform: rotate(360deg);
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        &__trailer{
+            img{
+                height: 30px;
+                &:hover{
+                    transition: none;
+                }
+            }
+        }
+        &__brand{
+            img{
+                height: 50px;
+                &:hover{
+                    transition: none;
+                }
+            }
+        }
+        &__play{
+            img{
+                height: 30px; 
+                &:hover{
+                    transition: none;
+                }
+            }
+        }
+
+    }
+        @media(min-width: 769px) and (max-width: 960px){
+            &__trailer{
+                img{
+                    height: 50px;
+                    &:hover{
+                        transition: none;
+                    }
+                }
+            }
+            &__brand{
+                img{
+                    height: 90px;
+                    &:hover{
+                        transition: none;
+                    }
+                }
+            }
+            &__play{
+                img{
+                    height: 50px; 
+                    &:hover{
+                        transition: none;
+                    }
+                }
+            }
+
+}
+}

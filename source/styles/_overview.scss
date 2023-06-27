@@ -1,0 +1,137 @@
+@use 'variaveis'; 
+.overview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+    background-image: url('../../images/deadpoolPerfil.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    min-height: 100vh;
+    
+    @media screen and (max-width: 768px){
+        background-image: url('../../images/deadpoolfacemobile.jpg');
+        background-size: contain;
+    }
+    @media(min-width: 769px) and (max-width: 960px){
+        background-image: url('../../images/deadpoolfacemobile.jpg');
+        background-size: cover;
+    }
+
+
+
+    li{
+        list-style: none;
+    }
+
+    &__content{
+        color: variaveis.$TextColor;
+        display: flex;
+        font-size: 35px;
+
+        @media screen and (max-width: 768px){
+        font-size: 15px;
+            
+        p{
+            max-height: 159px;
+            overflow-y: hidden;
+            display: pointer;
+        }
+        
+        }
+
+        @media(min-width: 769px) and (max-width: 960px){
+        font-size: 25px;
+            
+        p{
+            max-height: 180px;
+            overflow-y: hidden;
+            display: pointer; 
+        }
+        
+        }
+
+        
+        &__text{
+            display: inline-block;
+            margin: auto 100px;
+
+            @media screen and (max-width: 768px){
+                margin: auto 10px;
+                ul{
+                    display: block;
+                }
+            }
+            @media(min-width: 769px) and (max-width: 960px){
+                margin: auto 8px;
+                ul{
+                    display: block;
+                }
+            }
+        }
+        
+    }
+    &__list{
+        display: block;
+        margin: 40px 0;
+        &__item{
+            display: inline-block;
+            font-size: 30px;
+            margin: 20px;
+            max-width: 200px;
+            max-height: 200px;
+            height: 100%;
+            text-align: center;
+
+            @media screen and (max-width: 768px){
+                margin: 5px; 
+                font-size: 10px;
+                height: 10px;
+                }
+                
+                @media(min-width: 769px) and (max-width: 960px){
+                    margin: 5px; 
+                    font-size: 10px;
+                    height: 30px;
+                    }
+                    
+            a{
+                text-decoration: none;
+                color: #e6ddde;
+            }
+
+            img{
+                border-radius: 50%;
+                display: inline;
+                margin-bottom: 10px;
+
+                @media screen and (max-width: 768px){
+                  display: none;
+                  margin: 5px;
+                    }
+            @media(min-width: 769px) and (max-width: 960px){
+                display: none;
+                margin: 0;
+            }
+
+            }
+        }
+
+    }
+    &__title{
+        color: #fff;
+        display: block;
+        font-size: 40px;
+        text-align: center;
+    @media screen and (max-width: 768px){
+        font-size: 20px;
+    }
+    @media(min-width: 769px) and (max-width: 960px){
+        font-size: 40px;
+        top: 0;
+    }
+
+    }
+
+}

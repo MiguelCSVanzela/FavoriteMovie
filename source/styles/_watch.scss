@@ -1,0 +1,43 @@
+.watch{
+    min-height: 100vh;
+    background-image: url('../../images/deadpoolWatch.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @media screen and (max-width: 768px){
+        background-image: url('../../images/deadpoolmobilefacelogo.jpg');
+        background-size: contain;
+    }
+
+    @media(min-width: 769px) and (max-width: 960px){
+    }
+    
+    
+    &__container{
+        background-color: rgba(0, 0, 0, 0.307);
+        height: 100vh;
+        display: flex; 
+        align-items: center;
+        justify-content: end;
+    }
+    
+    &__callToAction{
+        padding: 8vw;
+
+        h3{
+            font-size: 80px; 
+            color: #fff;
+            font-weight: bolder;
+
+    @media screen and (max-width: 768px){
+        font-size: 40px;
+        text-align: center;
+    }
+    @media(min-width: 769px) and (max-width: 960px){
+        font-size: 80px;
+        text-align: center;
+    }
+    
+        }
+    }
+}

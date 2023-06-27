@@ -1,0 +1,66 @@
+@use 'variaveis'; 
+.hero{
+    min-width: 80vw;
+    min-height: 55vw;
+    background-image: url('../../images/deadpoolWallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 5vw;
+    
+    @media screen and (max-width: 768px){
+        min-height: 80vw;
+        background-position: 5vh;
+    }
+    
+    @media(min-width: 769px) and (max-width: 960px){
+        height: 76vh;
+        background-position: 1vh;
+    }
+
+    &__content{
+        color: #fff; 
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        text-align: center;
+        @media screen and (max-width: 768px){
+            max-width: 400px;
+            
+        }
+    @media(min-width: 769px) and (max-width: 960px){
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+        &__brand{
+            font-size: 90px;
+            color: variaveis.$PrimaryColor;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        blockquote{
+            font-size: 50px;
+        }
+
+        @media screen and (max-width: 768px){
+            &__brand{
+                font-size: 24px;
+            }
+            blockquote{
+                font-size: 20px;
+            }
+        }
+
+        @media(min-width: 769px) and (max-width: 960px){
+            &__brand{
+                font-size: 60px;
+            }
+            blockquote{
+                font-size: 45px;
+            }
+        }
+    }
+}
