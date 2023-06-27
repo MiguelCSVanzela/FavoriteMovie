@@ -1,33 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Header
-    const heroSection = document.querySelector('.hero');
-    const watchSection = document.querySelector('.watch');
-    const header = document.querySelector('.header');
-    const headerHeight = document.querySelector('.header');
-    const hideHeaderClass = 'header--is-hidden';
-
-    const heroHeight = heroSection.clientHeight;
-    const watchHeight = watchSection.clientHeight;
-    const headerHEight = headerHeight.clientHeight;
-
-
-    window.addEventListener('scroll', function () {
-        const currentHeight = document.scrollingElement;
-        if (watchHeight == headerHeight) {
-            hideHeader();
-        } else {
-            showHeader();
-        }
-    })
-
-    function showHeader() {
-        header.classList.remove(hideHeaderClass);
-    }
-
-    function hideHeader() {
-        header.classList.add(hideHeaderClass);
-    }
-
 
     // Scenes Section
     const buttonPrev = document.querySelector('.scenes__button__prev');
@@ -54,13 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonNext.addEventListener('click', function () {
         removeIsOpenClass();
         if (counter < 3) {
-            console.log(counter);
             AddIsOpenClass(counter);
             counter += 1;
-            console.log(counter);
         } else {
             counter = 0;
-            console.log("zerou", counter);
             AddIsOpenClass(counter);
         }
         return counter;
@@ -69,10 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonPrev.addEventListener('click', function () {
         removeIsOpenClass();
         if (counter > 0) {
-            console.log(counter);
             AddIsOpenClass(counter);
             counter -= 1;
-            console.log(counter);
         } else {
             counter = 2;
             AddIsOpenClass(counter);
@@ -83,12 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Curious 
     const curiousQuestion = document.querySelectorAll('[data-curious-question]');
+    const curiousSection = document.querySelector('.curious');
 
     function openOrCloseAnswer(element) {
         const classOpen = 'curious__questions__item--is-open';
         const parentElement = element.target.parentNode;
 
         parentElement.classList.toggle(classOpen);
+        curiousSection.style.overflowY = 'scroll';
     }
     for (let i = 0; i < curiousQuestion.length; i++) {
         curiousQuestion[i].addEventListener('click', openOrCloseAnswer)

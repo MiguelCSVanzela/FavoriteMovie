@@ -18,12 +18,12 @@ function scripts() {
 }
 
 function images() {
-    return gulp.src('/images')
+    return gulp.src('./images/*')
         .pipe(imagemin())
         .pipe(gulp.dest('./dist/images'))
 }
 
-exports.default = gulp.parallel(styles, scripts);
+exports.default = gulp.parallel(styles, images, scripts);
 
 exports.watch = function () {
     gulp.watch('./source/styles/*.scss', gulp.parallel(styles));

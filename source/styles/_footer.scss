@@ -1,6 +1,6 @@
-@use 'variaveis'; 
+@use 'variaveis';
 
-.footer{
+.footer {
     width: 100vw;
     background-image: url("../../images/deadpoolsinho.jpg");
     background-size: 700px;
@@ -9,50 +9,65 @@
     background-position: center;
     scroll-snap-type: none;
     height: 30vh;
-    
-    @media screen and (max-width: 768px){
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
         height: 20vh;
         background-size: contain;
     }
-    
-    &__content{
+
+    &__content {
         display: flex;
         justify-content: space-around;
-        color: variaveis.$TextColor;
-        
-        div{
+
+        div {
             width: 50vw;
             text-align: center;
         }
 
-        h3{
-            font-size: 70px;
-    @media screen and (max-width: 768px){
-        color: variaveis.$PrimaryColor; 
-        font-size: 20px;
-    }
-    @media(min-width: 769px) and (max-width: 960px){
-        color: variaveis.$TextColor; 
-        font-size: 30px;
-        margin-top: 10%;
-    }
+        h3 {
+            text-transform: capitalize;
 
-    
+            @media screen and (max-width: 768px) {
+                color: variaveis.$PrimaryColor;
+                font-size: 20px;
+            }
+
+            @media(min-width: 769px) and (max-width: 1023px) {
+                color: variaveis.$TextColor;
+                font-size: 30px;
+                margin-top: 10%;
+            }
+
+            @media screen and (min-width: 1024px) {
+                color: variaveis.$TextColor;
+                font-size: 50px;
+            }
+
+
         }
 
-        p{
-            color: variaveis.$PrimaryColor; 
-            font-size: 50px;
+        p {
             text-transform: uppercase;
-            @media screen and (max-width: 768px){
+
+            @media screen and (max-width: 768px) {
                 font-size: 5px;
                 color: variaveis.$TextColor;
             }
-            @media(min-width: 769px) and (max-width: 960px){
+
+            @media(min-width: 769px) and (max-width: 1023px) {
                 font-size: 40px;
                 color: variaveis.$PrimaryColor;
                 bottom: 0;
                 margin: 10%;
+            }
+
+            @media screen and (min-width: 1024px) {
+                color: variaveis.$PrimaryColor;
+                font-size: 30px;
             }
         }
     }

@@ -1,4 +1,4 @@
-@use 'variaveis'; 
+@use 'variaveis';
 @use 'header';
 @use 'hero';
 @use 'scenes';
@@ -7,83 +7,89 @@
 @use 'watch';
 @use 'footer';
 
-*{
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body, section{
+html,
+body,
+section {
     block-size: 100%;
 }
 
-body{
+body {
     display: flex;
     overflow-x: hidden;
     flex-direction: column;
     background-color: variaveis.$BackgroundColor;
     text-decoration: none;
     list-style: none;
+    font-family: variaveis.$PrimaryFont;
 }
 
-.container{
-    scroll-snap-type: y mandatory; 
+.container {
+    scroll-snap-type: y mandatory;
     height: 100vh;
     overflow-x: hidden;
 }
 
-.section{
+.section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    
+
 }
-.section:nth-child(5){
+
+.section:nth-child(5) {
     height: 50vh;
-    
+
 }
 
-@mixin title($font: 16px){
-    font-size: $font; 
-    padding-bottom: calc($font + 8px); 
+@mixin title($font: 16px) {
+    font-size: $font;
+    padding-bottom: calc($font + 8px);
 }
 
-.title-big{
-    @include title(24px); 
+.title-big {
+    @include title(24px);
 }
-.title{
-    @include title; 
+
+.title {
+    @include title;
 }
-.title-small{
+
+.title-small {
     @include title(8px);
 }
 
 
-.button{
+.button {
     display: flex;
     flex-direction: column;
     font-size: 25px;
     margin-top: 20px;
     padding: 10px 20px;
-    color: variaveis.$TextColor; 
-    border: none; 
-    border: 2px solid variaveis.$PrimaryColor; 
+    color: variaveis.$TextColor;
+    border: none;
+    border: 2px solid variaveis.$PrimaryColor;
     border-radius: 8px;
     text-transform: uppercase;
     background-color: transparent;
-    
-    &:hover{
-        color: variaveis.$BackgroundColor; 
+
+    &:hover {
+        color: variaveis.$BackgroundColor;
         background-color: variaveis.$PrimaryColor;
         cursor: pointer;
     }
 
-    a{
+    a {
         text-decoration: none;
     }
 
-    @media screen and (max-width: 768px){
-    font-size: 15px;
-    margin-top: 5px;
-    padding: 5px 10px;
+    @media screen and (max-width: 768px) {
+        font-size: 15px;
+        margin-top: 5px;
+        padding: 5px 10px;
     }
 }
